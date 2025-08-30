@@ -7,8 +7,7 @@ import numpy as np
 import google.generativeai as genai
 
 # --- Função Principal de Processamento e Treinamento ---
-# @st.cache_data otimiza o desempenho, garantindo que esta função pesada
-# rode apenas uma vez, a menos que o código dela mude.
+
 @st.cache_data
 def processar_dados_e_treinar_modelo():
     """
@@ -201,4 +200,5 @@ else:
                     st.markdown(resposta_ia)
                     st.session_state.messages.append({"role": "assistant", "content": resposta_ia})
                 except Exception as e:
+
                     st.error(f"Ocorreu um erro ao contatar a IA: {e}")
